@@ -7,11 +7,19 @@ import { signOut } from 'next-auth/react';
 const Nav = () => {
     const session = useSession();
     const user = session?.data?.user;
-    console.log(user);
+
     const navContent = user ? (
         <div>
-            <button className='bg-purple-200'>Profile</button>
-            <button className='bg-green-200' onClick={signOut}>Logout</button>
+            <Link href='/dashboard/profile'>
+                <button className='bg-purple-200'>
+                    Profile
+                </button>
+            </Link>
+            <Link href='/'>
+                <button className='bg-green-200' onClick={signOut}>
+                    Logout
+                </button>
+            </Link>
         </div>
     ) : (
         <div>
@@ -26,7 +34,7 @@ const Nav = () => {
 
     return (
         <nav className='pt-4 pb-4 pr-4 pl-2 bg-white text-black inline-grid grid-cols-2 w-full flex-wrap justify-items'>
-            <Link href='/' className='justify-self-start'>
+            <Link href={user !== undefined?'/home':'/'} className='justify-self-start'>
                 <h1 className='text-3xl font-bold hover:animate-bounce'>Note Nest</h1>
             </Link>
 

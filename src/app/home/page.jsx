@@ -6,7 +6,7 @@ const UserHome = () => {
     const session = useSession();
 
     console.log(session)
-    console.log(session.data.user)
+    console.log(session?.data?.user)
     return (
     <div>UserHome</div>
     )

@@ -17,9 +17,8 @@ const noteSchema = new Schema({
             required: true,
         },
         tags:{
-            type: Boolean,
-            default: false,
-            required: true,
+            type: Array,
+            default: [],
         },
         user:{
             type: String,

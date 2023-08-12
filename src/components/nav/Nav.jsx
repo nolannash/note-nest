@@ -3,11 +3,18 @@ import React from 'react';
 import Link from 'next/link';
 import { useSession } from 'next-auth/react';
 import { signOut } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 
 const Nav = () => {
     const session = useSession();
     const user = session?.data?.user;
+    const router = useRouter();
 
+    const handleLogout = async () => {
+        await signOut(); 
+        router.push('/'); 
+    };
+    
     const navContent = user ? (
         <div>
             <Link href='/dashboard/profile'>
@@ -15,11 +22,9 @@ const Nav = () => {
                     Profile
                 </button>
             </Link>
-            <Link href='/'>
-                <button className='bg-green-200' onClick={signOut}>
+                <button className='bg-green-200' onClick={handleLogout}>
                     Logout
                 </button>
-            </Link>
         </div>
     ) : (
         <div>
@@ -33,13 +38,17 @@ const Nav = () => {
     );
 
     return (
-        <nav className='pt-4 pb-4 pr-4 pl-2 bg-white text-black inline-grid grid-cols-2 w-full flex-wrap justify-items'>
-            <Link href={user !== undefined?'/home':'/'} className='justify-self-start'>
-                <h1 className='text-3xl font-bold hover:animate-bounce'>Note Nest</h1>
-            </Link>
+        <details className='p-4 text-end bg-white text-black text-bold hover:h-auto'>
+            <summary className=' justify-self-center text-lg'>show/hide NAV</summary>
+            <nav className='pt-4 pb-4 pr-4 pl-2 bg-white text-black inline-grid grid-cols-3 w-full flex-wrap justify-items'>
+                <Link href={user !== undefined?'/home':'/'} className='justify-self-start'>
+                    <h1 className='text-3xl font-bold hover:animate-bounce'>Note Nest</h1>
+                </Link>
 
-            <div className='justify-self-end space-x-4'>{navContent}</div>
-        </nav>
+                <div className='text-black text-2xl justify-self-center'>notes, for the visual thinker</div>
+                <div className='justify-self-end space-x-4'>{navContent}</div>
+            </nav>
+        </details>
     );
 };
 

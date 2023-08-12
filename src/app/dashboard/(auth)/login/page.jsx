@@ -38,7 +38,7 @@ const Login = ({ url }) => {
 
     return (
     <div className={styles.container}>
-        <h1 className={styles.title}>Please Login To Continue</h1>
+        <h1 className={styles.title}>Login</h1>
 
         <form onSubmit={handleSubmit} className={styles.form}>
         <input
@@ -65,8 +65,8 @@ const Login = ({ url }) => {
         Login with Google
         </button>
         <span className={styles.or}>- OR -</span>
-        <Link className={styles.link} href="/dashboard/register">
-        Create new account
+        <Link  href="/dashboard/register">
+        <button className={`${styles.button} ${styles.register}`}> Create new account</button> 
         </Link>
 
     </div>

@@ -6,7 +6,10 @@
 }
 
 .title{
-  color: #bbb;
+  padding-top: 5px;
+  color: #ffffff;
+  font-size: 40px;
+  font-style: bold;
 }
 
 .subtitle{
@@ -67,4 +70,11 @@
 
 .google:hover {
   background-color: rgba(228, 97, 50, 0.803);
+}
+
+.register{
+  background-color: rgb(56, 153, 188, 0.8);
+}
+.register:hover{
+  background-color: rgb(56, 153, 188, 0.9);
 }

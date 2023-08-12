@@ -1,35 +1,73 @@
-.container{
+.container {
     display: flex;
     flex-direction: column;
     gap: 20px;
     align-items: center;
     justify-content: center;
-  }
-  
-  .form{
-    width: 300px;
+    overflow-y: auto;
+}
+
+.details {
+    gap: 20px;
+}
+
+.welcome{
+  font-size:40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 1000px;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border:2px solid #bbb;
+  border-radius: 10px;
+}
+
+.form {
+    width: 350px;
     display: flex;
     flex-direction: column;
     gap: 20px;
-  }
-  
-  .input{
+    align-items: center;
+}
+
+.input {
     padding: 20px;
+    width: 350px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     background-color: transparent;
     border: 2px solid #bbb;
-    color:#bbb;
-    border-radius: 5px;
+    color: #bbb;
+    border-radius: 10px;
     font-size: 20px;
     font-weight: bold;
-  }
-  
-  .button {
-    width: 300px;
+}
+
+.button {
+    width: 350px;
     padding: 20px;
     cursor: pointer;
     background-color: #53c28b;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     color: #eee;
     font-weight: bold;
-  }
+}
+
+.delete {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 25px; 
+    width: 150px;
+    background-color: #e44242;
+    white-space: nowrap;
+    margin-left: auto;
+}
+
+.home {
+    background-color: rgb(133, 211, 233);
+    width: 150px;
+    margin-right: 50px; 
+    font-weight: bold; 
+}

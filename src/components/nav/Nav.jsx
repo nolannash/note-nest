@@ -18,7 +18,7 @@ const Nav = () => {
     const navContent = user ? (
         <div>
             <Link href='/dashboard/profile'>
-                <button className='bg-purple-200'>
+                <button className='bg-purple-200 p-2 '>
                     Profile
                 </button>
             </Link>
@@ -27,19 +27,19 @@ const Nav = () => {
                 </button>
         </div>
     ) : (
-        <div>
+        <div className='flex flex-grid grid-cols-2'>
             <Link href='/dashboard/login'>
-                <button className='bg-red-200'>Login</button>
+                <button className='bg-red-200 p-2 rounded-lg text-white  border-red-300 border-solid'>Login</button>
             </Link>
             <Link href='/dashboard/register'>
-                <button className='bg-blue-200'>Register</button>
+                <button className='bg-blue-200 p-2 rounded-lg text-white'>Register</button>
             </Link>
         </div>
     );
 
     return (
-        <details className='p-4 text-end bg-white text-black text-bold hover:h-auto'>
-            <summary className=' justify-self-center text-lg'>show/hide NAV</summary>
+        <div className='p-4 text-end bg-white text-black text-bold hover:h-auto'>
+
             <nav className='pt-4 pb-4 pr-4 pl-2 bg-white text-black inline-grid grid-cols-3 w-full flex-wrap justify-items'>
                 <Link href={user !== undefined?'/home':'/'} className='justify-self-start'>
                     <h1 className='text-3xl font-bold hover:animate-bounce'>Note Nest</h1>
@@ -48,8 +48,10 @@ const Nav = () => {
                 <div className='text-black text-2xl justify-self-center'>notes, for the visual thinker</div>
                 <div className='justify-self-end space-x-4'>{navContent}</div>
             </nav>
-        </details>
+        </div>
     );
 };
 
 export default Nav;
+
+//            <summary className=' justify-self-center text-lg'>show/hide NAV</summary>

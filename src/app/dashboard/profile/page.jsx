@@ -54,9 +54,9 @@ const Profile = () => {
                             </button>
                         </Link>
                     </div>
-                    <details className=' justify-items w-full'>
+                    <details className=' justify-items text-center '>
                         <summary className='text-2xl justify-self-center bg-slate-200 rounded-lg bg-opacity-50 w-full'>Edit Profile</summary>
-                        <div>
+                        <div className={`${styles.form}`}>
                             <input
                                 className={styles.input}
                                 type="text"

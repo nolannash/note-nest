@@ -1,34 +1,43 @@
 .container {
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     gap: 20px;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     overflow-y: auto;
+    /* width: auto; */
 }
 
 .details {
     gap: 20px;
 }
 
+.details{
+    width: fixed;
+}
+
 .welcome{
-  font-size:40px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  width: 1000px;
-  text-align: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border:2px solid #bbb;
-  border-radius: 10px;
+    font-size:40px;
+    /* margin-top: 20px;
+    margin-bottom: 20px;*/
+    /* width: inherit;  */
+    background-color: transparent;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+    border:2px solid #bbb;
+    border-radius: 10px;
+    white-space: nowrap;
 }
 
 .form {
-    width: 350px;
+    /* width: 350px; */
     display: flex;
     flex-direction: column;
     gap: 20px;
     align-items: center;
+    overflow-y: auto;
 }
 
 .input {

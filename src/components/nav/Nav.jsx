@@ -34,9 +34,9 @@ const Nav = () => {
     const navContent = user ? (
         <div>
             <Link href='/dashboard/profile'>
-                <button className='bg-purple-200 p-2 m-2 rounded-lg text-white border-red-300 border-solid'>Profile</button>
+                <button className='bg-purple-400 p-2 m-2 rounded-lg text-white border-red-300 border-solid'>Profile</button>
             </Link>
-            <button className='bg-green-200 m-2 p-2 rounded-lg text-white border-red-300 border-solid' onClick={handleLogout}>
+            <button className='bg-green-400 m-2 p-2 rounded-lg text-white border-red-300 border-solid' onClick={handleLogout}>
                 Logout
             </button>
         </div>
@@ -62,14 +62,15 @@ const Nav = () => {
                     </Link>
                 </div>
 
-                <div className=' text-2xl justify-self-center flex flex-col items-center'>
-                    <p className='mr-2 mb-2 '>notes, for the visual thinker</p>
-                    <button className='text-sm bg-green-400 rounded-lg p-2' onClick={toggleNav}>
-                        Hide Nav
-                    </button>
-                </div>
+
+                    {user?<Link href='/note' className='justify-self-center pt-5 text-2xl'>Start A New Note</Link>:<p className='mr-2 mb-2 justify-self-center '>notes, for the visual thinker</p>}
+
+
                 
-                <div className='justify-self-end space-x-4 pt-5'>{navContent}</div>
+                <div className='justify-self-end pt-5 inline-flex'>
+                    <button className='text-sm bg-orange-400 border-red-200 border solid rounded-lg m-2 p-2' onClick={toggleNav}>
+                Hide Nav
+            </button>{navContent}</div>
             </nav>
         </div>
     );

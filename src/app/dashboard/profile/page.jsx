@@ -43,7 +43,7 @@ const Profile = () => {
                     </div>
 
                     <div >
-                        <Link href='/home'>
+                        <Link href='/'>
                             <button className={`${styles.button} ${styles.home}` }>
                                 Home
                             </button>

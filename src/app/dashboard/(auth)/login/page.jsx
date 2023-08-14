@@ -22,7 +22,7 @@ const Login = ({ url }) => {
     }
 
     if (session.status === "authenticated") {
-    router?.push("/home");
+    router?.push("/");
     }
 
     const handleSubmit = (e) => {
